@@ -54,3 +54,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "pg", "~> 1.2"
+
+gem 'dotenv-rails'
+
+group :assets do
+  gem 'jquery-rails'
+end
