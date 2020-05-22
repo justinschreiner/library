@@ -1,4 +1,4 @@
-class BookController < ApplicationController
+class BooksController < ApplicationController
 
    def index
     @books = Book.all
@@ -10,15 +10,10 @@ class BookController < ApplicationController
    
    def new
       @book = Book.new
-      @subjects = Subject.all
-   end
-
-   def book_params
-      params.require(:books).permit(:title, :price, :subject_id, :description)
    end
 
    def create
-      @book = Book.new(book_params)
+      @book = Book.new(book_param)
 
       if @book.save
          redirect_to :action => 'index'
@@ -30,11 +25,6 @@ class BookController < ApplicationController
    
    def edit
       @book = Book.find(params[:id])
-      @subjects = Subject.all
-   end
-   
-   def book_param
-      params.require(:book).permit(:title, :price, :subject_id, :description)
    end
    
    def update
@@ -50,11 +40,10 @@ class BookController < ApplicationController
    
    def delete
       Book.find(params[:id]).destroy
-      redirect_to :action => 'index'
+      redirect_to action: 'index'
    end
    
-   def show_subjects
-      @subject = Subject.find(params[:id])
+   def book_param
+      params.require(:book).permit(:title, :price, :subject_id, :description)
    end
-  
 end
