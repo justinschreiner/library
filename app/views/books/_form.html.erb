@@ -1,4 +1,5 @@
-<p><label for = "book_title">Title</label>:
+<%= form_with model:@book, local: true do |f|%>
+<p> <label for = "book_title">Title</label>:
 
 <%= text_field 'books', 'title' %></p>
 <p><label for = "book_price">Price</label>:
@@ -9,4 +10,6 @@
 <%= collection_select(:books, :subject_id, @subjects, :id, :name, prompt: true) %></p>
 <p><label for = "book_description">Description</label><br/>
 
-<%= text_area 'books', 'description' %></p>
+<%= text_area 'books', 'description' %> </p>
+<%= f.submit "Submit" %>
+<% end %>

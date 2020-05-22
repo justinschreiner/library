@@ -16,10 +16,9 @@ class BooksController < ApplicationController
       @book = Book.new(book_param)
 
       if @book.save
-         redirect_to :action => 'index'
+         redirect_to action: 'index'
       else
-         @subjects = Subject.all
-         render :action => 'new'
+         render action: 'new'
       end
    end
    
@@ -31,19 +30,18 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
       
       if @book.update_attributes(book_param)
-         redirect_to :action => 'show', :id => @book
+         redirect_to action: 'show', :id => @book
       else
-         @subjects = Subject.all
-         render :action => 'edit'
+         render action: 'edit'
       end
    end
    
-   def delete
+   def destroy
       Book.find(params[:id]).destroy
       redirect_to action: 'index'
    end
    
    def book_param
-      params.require(:book).permit(:title, :price, :subject_id, :description)
+      params.require(:books).permit(:title, :price, :subject_id, :description)
    end
 end

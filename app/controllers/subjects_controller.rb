@@ -1,5 +1,9 @@
 class SubjectsController < ApplicationController
 
+    def index
+        @books = Subject.all
+    end
+
     def show
         @subject = Subject.find(params[:id])
     end
@@ -10,6 +14,16 @@ class SubjectsController < ApplicationController
 
     def new
         @subjects = Subject.new
+    end
+
+    def create
+        @subject = Subject.new(book_param)
+
+        if @subject.save
+            redirect_to :action => 'index'
+        else
+            render :action => 'new'
+        end
     end
 
     def update
