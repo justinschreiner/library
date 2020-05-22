@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
 
     def index
-        @books = Subject.all
+        @subjects = Subject.all
     end
 
     def show
@@ -9,7 +9,7 @@ class SubjectsController < ApplicationController
     end
 
     def edit
-        @subjects = Subject.all
+        @subject = Subject.all
     end
 
     def new
@@ -17,7 +17,7 @@ class SubjectsController < ApplicationController
     end
 
     def create
-        @subject = Subject.new(book_param)
+        @subject = Subject.new(subject_param)
 
         if @subject.save
             redirect_to :action => 'index'
@@ -32,7 +32,7 @@ class SubjectsController < ApplicationController
         if @subject.update_attributes(subject_param)
             redirect_to action: "show", id: @subject
         else
-            render action: "edit"
+            render action: 'edit'
         end
     end
 
@@ -40,5 +40,9 @@ class SubjectsController < ApplicationController
         @subject = Subject.find(params[:id])
         @subject.destroy
         redirect_to action: "index"
+    end
+
+    def book_param
+        params.require(:subjects).permit(:name)
     end
 end

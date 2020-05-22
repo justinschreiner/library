@@ -30,7 +30,7 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
       
       if @book.update_attributes(book_param)
-         redirect_to action: 'show', :id => @book
+         redirect_to action: 'show', id: @book
       else
          render action: 'edit'
       end
@@ -42,6 +42,6 @@ class BooksController < ApplicationController
    end
    
    def book_param
-      params.require(:books).permit(:title, :price, :subject_id, :description)
+      params.require(:book).permit(:title, :price, :subject_id, :description)
    end
 end

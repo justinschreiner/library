@@ -1,15 +1,16 @@
 <%= form_with model:@book, local: true do |f|%>
+
 <p> <label for = "book_title">Title</label>:
+<%= f.text_field(:title) %></p>
 
-<%= text_field 'books', 'title' %></p>
 <p><label for = "book_price">Price</label>:
+<%= f.text_field(:price) %></p>
 
-<%= text_field 'books', 'price' %></p>
 <p><label for = "book_subject_id">Subject</label>:
+<%= f.collection_select(:subject_id, @subjects, :id, :name, prompt: true) %></p>
 
-<%= collection_select(:books, :subject_id, @subjects, :id, :name, prompt: true) %></p>
 <p><label for = "book_description">Description</label><br/>
+<%= f.text_area(:description) %> </p>
 
-<%= text_area 'books', 'description' %> </p>
 <%= f.submit "Submit" %>
 <% end %>
