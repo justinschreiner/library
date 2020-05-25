@@ -60,3 +60,5 @@ gem 'dotenv-rails'
 group :assets do
   gem 'jquery-rails'
 end
+
+gem 'trestle'
