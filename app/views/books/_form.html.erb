@@ -7,7 +7,7 @@
 <%= f.text_field(:price) %></p>
 
 <p><label for = "book_subject_id">Subject</label>:
-<%= f.collection_select(:subject_id, @subjects, :id, :name, prompt: true) %></p>
+<%= f.collection_select(:subject_id, Subject.all, :id, :name, prompt: true) %></p>
 
 <p><label for = "book_description">Description</label><br/>
 <%= f.text_area(:description) %> </p>
