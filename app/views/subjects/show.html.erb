@@ -2,6 +2,6 @@
 
 <ul>
    <% @subject.books.each do |c| %>
-   <li><%= link_to c.title, :action => "show", :id => c.id -%></li>
+   <li><%= link_to c.title, :action => "show", controller: 'books', :id => c.id -%></li>
    <% end %>
 </ul>
