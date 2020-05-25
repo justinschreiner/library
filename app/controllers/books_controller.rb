@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
+   skip_before_action :verify_authenticity_token
 
    def index
-    @books = Book.all
+      @books = Book.all
    end
 
    def show
@@ -10,7 +11,6 @@ class BooksController < ApplicationController
    
    def new
       @book = Book.new
-      @subjects = Subject.all
    end
 
    def create
