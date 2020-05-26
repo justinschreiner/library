@@ -35,7 +35,7 @@ Trestle.resource(:books) do
   # For further information, see the Rails documentation on Strong Parameters:
   #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
   #
-  # params do |params|
-  #   params.require(:book).permit(:name, ...)
-  # end
+  params do |params|
+    params.require(:book).permit(:title, :price, :subject_id, :description)
+  end
 end

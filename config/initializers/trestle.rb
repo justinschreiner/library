@@ -125,4 +125,10 @@ Trestle.configure do |config|
   # Enable debugging of form errors. Defaults to true in development mode.
   #
   # config.debug_form_errors = true
+
+
+  config.hook("view.header") do
+    render "head"
+  end
+  
 end
