@@ -9,9 +9,9 @@ Trestle.resource(:books) do
   #   column :id
   #   column :title
   #   column :price
-  #   column Subject.find( :subject_id ).name
+  #   column @subject.name
   #   column :created_at, align: :center
-  #   # actions
+  #   actions
   # end
 
   # Customize the form fields shown on the new/edit views.
@@ -22,10 +22,6 @@ Trestle.resource(:books) do
     subject_select = Subject.all
     select :subject_id, subject_select
     text_field :description
-  
-    row do
-      col { datetime_field :created_at }
-    end
   end
 
   # By default, all parameters passed to the update and create actions will be
