@@ -126,9 +126,7 @@ Trestle.configure do |config|
   #
   # config.debug_form_errors = true
 
-
   config.hook("view.header") do
     render "admin/head"
   end
-  
 end
