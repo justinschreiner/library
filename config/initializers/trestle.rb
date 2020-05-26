@@ -128,7 +128,7 @@ Trestle.configure do |config|
 
 
   config.hook("view.header") do
-    render "head"
+    render "admin/head"
   end
   
 end
