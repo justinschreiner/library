@@ -6,9 +6,12 @@ Trestle.resource(:books) do
   # Customize the table columns shown on the index view.
   #
   # table do
-  #   column :name
+  #   column :id
+  #   column :title
+  #   column :price
+  #   column Subject.find( :subject_id ).name
   #   column :created_at, align: :center
-  #   actions
+  #   # actions
   # end
 
   # Customize the form fields shown on the new/edit views.
