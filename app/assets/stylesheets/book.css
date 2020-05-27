@@ -3,16 +3,16 @@ a:active,
 a:visited {
   text-decoration: none !important;
 }
-ul#subjects .btn-light,
-ul#books .btn-light {
+.container .btn-light,
+ul#subjects .btn-light {
   background-color: #808080;
 }
+.container .btn-light a:link,
+.container .btn-light a:active,
+.container .btn-light a:visited,
 ul#subjects .btn-light a:link,
 ul#subjects .btn-light a:active,
-ul#subjects .btn-light a:visited,
-ul#books .btn-light a:link,
-ul#books .btn-light a:active,
-ul#books .btn-light a:visited {
+ul#subjects .btn-light a:visited {
   color: white !important;
 }
 .btn-outline-danger {

@@ -11,14 +11,15 @@
   %p There are not any books currently in the system.
 - else
   %p These are the currently books in our system
-  %ul#books
+  .container
     - @books.each do |c|
-      %li
-        .btn.btn-light.btn-sm
-          = link_to c.title, {action: 'show', id: c.id}
-        .btn.btn-outline-danger.btn-sm
-          = link_to "Edit", trestle.edit_books_admin_path(c)
+      .row
+        .col
+          .btn.btn-light.btn-sm
+            = link_to c.title, {action: 'show', id: c.id}
+        .col
+          .btn.btn-outline-danger.btn-sm
+            = link_to "Edit", trestle.edit_books_admin_path(c)
         -# getting rid of delete option here.  if an admin wants to delete a book, they can do so by clicking edit and loging into trestle
-%p
-  .btn.btn-outline-danger.btn-sm
-    = link_to "Add New Book", trestle.new_books_admin_path
+    .btn.btn-outline-danger.btn-sm
+      = link_to "Add New Book", trestle.new_books_admin_path
