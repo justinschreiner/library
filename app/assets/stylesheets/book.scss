@@ -5,8 +5,19 @@
 a:link,
 a:active,
 a:visited {
-  color: white !important;
   text-decoration: none !important;
+}
+
+ul#subjects,
+ul#books {
+  .btn-light {
+    background-color: #808080;
+    a:link,
+    a:active,
+    a:visited {
+      color: white !important;
+    }
+  }
 }
 
 .btn-outline-danger {

@@ -1,7 +1,7 @@
 %ul#subjects
   - Subject.find_each do |c|
     %li
-      .btn.btn-primary.btn-sm
+      .btn.btn-light.btn-sm
         = link_to c.name, action: "show", controller: "subjects", id: c.id
   %br
   %li
@@ -14,7 +14,7 @@
   %ul#books
     - @books.each do |c|
       %li
-        .btn.btn-primary.btn-sm
+        .btn.btn-light.btn-sm
           = link_to c.title, {action: 'show', id: c.id}
         .btn.btn-outline-danger.btn-sm
           = link_to "Edit", trestle.edit_books_admin_path(c)

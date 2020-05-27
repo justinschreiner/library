@@ -1,8 +1,19 @@
 a:link,
 a:active,
 a:visited {
-  color: white !important;
   text-decoration: none !important;
+}
+ul#subjects .btn-light,
+ul#books .btn-light {
+  background-color: #808080;
+}
+ul#subjects .btn-light a:link,
+ul#subjects .btn-light a:active,
+ul#subjects .btn-light a:visited,
+ul#books .btn-light a:link,
+ul#books .btn-light a:active,
+ul#books .btn-light a:visited {
+  color: white !important;
 }
 .btn-outline-danger {
   margin: 0.25em;
