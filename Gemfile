@@ -66,3 +66,7 @@ gem "trestle"
 gem "standard", group: [:development, :test]
 
 gem "haml-rails", "~> 2.0"
+
+gem 'devise'
+
+gem 'trestle-auth'
