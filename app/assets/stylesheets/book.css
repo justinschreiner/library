@@ -15,6 +15,10 @@ ul#subjects .btn-light a:active,
 ul#subjects .btn-light a:visited {
   color: white !important;
 }
+.container .btn-light:hover,
+ul#subjects .btn-light:hover {
+  background-color: #444;
+}
 .btn-outline-danger {
   margin: 0.25em;
 }

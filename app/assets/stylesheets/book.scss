@@ -12,21 +12,28 @@ a:visited {
 ul#subjects {
   .btn-light {
     background-color: #808080;
+
     a:link,
     a:active,
     a:visited {
       color: white !important;
+    }
+
+    &:hover {
+      background-color: #444;
     }
   }
 }
 
 .btn-outline-danger {
   margin: 0.25em;
+
   a:link,
   a:active,
   a:visited {
     color: red !important;
   }
+
   &:hover {
     a:link,
     a:active,
