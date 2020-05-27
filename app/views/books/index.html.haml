@@ -1,8 +1,12 @@
 %ul#subjects
   - Subject.find_each do |c|
-    %li= link_to c.name, action: "show", controller: "subjects", id: c.id
+    %li
+      .btn.btn-primary.btn-sm
+        = link_to c.name, action: "show", controller: "subjects", id: c.id
+  %br
   %li
-    = link_to "Add new Subject", trestle.new_subjects_admin_path
+    .btn.btn-outline-danger.btn-sm
+      = link_to "Add New Subject", trestle.new_subjects_admin_path
 - if @books.blank?
   %p There are not any books currently in the system.
 - else
@@ -10,8 +14,11 @@
   %ul#books
     - @books.each do |c|
       %li
-        = link_to c.title, {action: 'show', id: c.id}
-        %b
+        .btn.btn-primary.btn-sm
+          = link_to c.title, {action: 'show', id: c.id}
+        .btn.btn-outline-danger.btn-sm
           = link_to "Edit", trestle.edit_books_admin_path(c)
         -# getting rid of delete option here.  if an admin wants to delete a book, they can do so by clicking edit and loging into trestle
-%p= link_to "Add new Book", trestle.new_books_admin_path
+%p
+  .btn.btn-outline-danger.btn-sm
+    = link_to "Add New Book", trestle.new_books_admin_path

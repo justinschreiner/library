@@ -1,0 +1,19 @@
+a:link,
+a:active,
+a:visited {
+  color: white !important;
+  text-decoration: none !important;
+}
+.btn-outline-danger {
+  margin: 0.25em;
+}
+.btn-outline-danger a:link,
+.btn-outline-danger a:active,
+.btn-outline-danger a:visited {
+  color: red !important;
+}
+.btn-outline-danger:hover a:link,
+.btn-outline-danger:hover a:active,
+.btn-outline-danger:hover a:visited {
+  color: white !important;
+}
