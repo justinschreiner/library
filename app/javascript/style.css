@@ -1,0 +1,100 @@
+body {
+  font-family: Helvetica, Geneva, Arial, sans-serif;
+  font-size: small;
+  color: #000;
+  background-color: #fff;
+}
+a:link,
+a:active,
+a:visited {
+  color: #cd0000;
+}
+input {
+  margin-bottom: 5px;
+}
+p {
+  line-height: 150%;
+  font-size: 1.15em;
+}
+div#container {
+  width: 760px;
+  margin: 0 auto;
+}
+div#header {
+  text-align: center;
+  padding-bottom: 15px;
+}
+div#content {
+  float: left;
+  width: 450px;
+  padding: 10px;
+}
+div#content h3 {
+  margin-top: 15px;
+}
+ul#books {
+  list-style-type: none;
+}
+ul#books li {
+  line-height: 140%;
+}
+div#sidebar {
+  width: 200px;
+  margin-left: 480px;
+}
+ul#subjects {
+  width: 700px;
+  text-align: center;
+  padding: 5px;
+  background-color: #ececec;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+ul#subjects li {
+  display: inline;
+  padding-left: 5px;
+}
+ul#subjects .btn-light,
+.container .btn-light {
+  background-color: #808080;
+}
+ul#subjects .btn-light a:link,
+ul#subjects .btn-light a:active,
+ul#subjects .btn-light a:visited,
+.container .btn-light a:link,
+.container .btn-light a:active,
+.container .btn-light a:visited {
+  color: white !important;
+}
+ul#subjects .btn-light:hover,
+.container .btn-light:hover {
+  background-color: #444;
+}
+ul#subjects a:link,
+ul#subjects a:active,
+ul#subjects a:visited,
+.container a:link,
+.container a:active,
+.container a:visited {
+  text-decoration: none !important;
+}
+ul#subjects .btn-outline-danger,
+.container .btn-outline-danger {
+  margin: 0.25em;
+}
+ul#subjects .btn-outline-danger a:link,
+ul#subjects .btn-outline-danger a:active,
+ul#subjects .btn-outline-danger a:visited,
+.container .btn-outline-danger a:link,
+.container .btn-outline-danger a:active,
+.container .btn-outline-danger a:visited {
+  color: red !important;
+}
+ul#subjects .btn-outline-danger:hover a:link,
+ul#subjects .btn-outline-danger:hover a:active,
+ul#subjects .btn-outline-danger:hover a:visited,
+.container .btn-outline-danger:hover a:link,
+.container .btn-outline-danger:hover a:active,
+.container .btn-outline-danger:hover a:visited {
+  color: white !important;
+}
