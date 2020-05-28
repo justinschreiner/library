@@ -4,15 +4,16 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "en-us", "http-equiv" => "Content-Language"}/
     %title Library Info System
-    = stylesheet_link_tag "style"
+    -# = stylesheet_link_tag 'style'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application'
   %body#library
     #container
       #header
         %h1 Library Info System
         %h3 Library powered by Ruby on Rails
+      %p.notice= notice
+      %p.alert= alert
       #content
         = yield
       #sidebar
-      %p.notice= notice
-      %p.alert= alert
