@@ -21,6 +21,8 @@ Trestle.resource(:books) do
     text_field :price
     subject_select = Subject.all
     select :subject_id, subject_select
+    publisher_select = Publisher.all
+    select :publisher_id, publisher_select
     text_field :description
   end
 
