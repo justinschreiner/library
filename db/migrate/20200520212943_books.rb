@@ -4,6 +4,7 @@ class Books < ActiveRecord::Migration[6.0]
       t.column :title, :string, limit: 32, null: false
       t.column :price, :float
       t.column :subject_id, :integer
+      t.column :publisher_id, :integer
       t.column :description, :text
       t.column :created_at, :timestamp
     end
