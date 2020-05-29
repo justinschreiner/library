@@ -1,4 +1,4 @@
 class Copy < ApplicationRecord
     belongs_to :book
-    belongs_to :subject
+    belongs_to :libary
 end
