@@ -1,8 +1,12 @@
 class CreateCopies < ActiveRecord::Migration[6.0]
-  def change
+  def self.up
     create_table :copies do |t|
-
-      t.timestamps
+      t.column :name, :string
+      t.column :checked_out, :boolean
     end
+  end
+
+  def self.down
+    drop_table :copies
   end
 end

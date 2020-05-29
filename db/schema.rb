@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_192802) do
+ActiveRecord::Schema.define(version: 2020_05_29_151156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 2020_05_28_192802) do
     t.bigint "subject_id", null: false
     t.index ["book_id"], name: "index_books_subjects_on_book_id"
     t.index ["subject_id"], name: "index_books_subjects_on_subject_id"
+  end
+
+  create_table "copies", force: :cascade do |t|
+    t.string "name"
+    t.boolean "checked_out"
   end
 
   create_table "publishers", force: :cascade do |t|
