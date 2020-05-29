@@ -5,11 +5,17 @@ Trestle.resource(:copies) do
 
   # Customize the table columns shown on the index view.
   #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do
+    column :book_id, -> (copy) { Book.find(copy.book_id).title }
+    column :name
+    column :checked_out, align: :center do |copy|
+      if copy.checked_out?
+        status_tag(icon("fa fa-check"), :success)
+      else
+        status_tag(" ")
+      end 
+    end
+  end
 
   # Customize the form fields shown on the new/edit views.
   #
