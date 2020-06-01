@@ -5,22 +5,21 @@ Trestle.resource(:library_locations) do
 
   # Customize the table columns shown on the index view.
   #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do
+    column :id
+    column :name
+    column :address
+    column :established
+    column :created_at, align: :center
+  end
 
   # Customize the form fields shown on the new/edit views.
   #
-  # form do |library_location|
-  #   text_field :name
-  #
-  #   row do
-  #     col { datetime_field :updated_at }
-  #     col { datetime_field :created_at }
-  #   end
-  # end
+  form do |library_location|
+    text_field :name
+    text_field :address
+    text_field :established
+  end
 
   # By default, all parameters passed to the update and create actions will be
   # permitted. If you do not have full trust in your users, you should explicitly
