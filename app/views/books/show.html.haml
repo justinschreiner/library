@@ -9,16 +9,20 @@
   %strong Publisher:
   = link_to @book.publisher.name, action: "show", controller: 'publishers', id: @book.publisher.id
   %br/
-  %table
-    %tr
-      %th Copy
-      %th Library
-    - Copy.where(book_id: @book.id).each do |c|
+  - if Copy.where(book_id: @book.id).blank?
+    %p This book has no copies.
+  - else
+    %table
       %tr
-        %td=c.name
-        %td
-          = link_to LibraryLocation.find(c.library_location_id).name, action: "show", controller: 'library_locations', id: c.library_location_id
-%p= @book.description
+        %th Copy
+        %th Library
+      - Copy.where(book_id: @book.id).each do |c|
+        %tr
+          %td=c.name
+          %td
+            = link_to LibraryLocation.find(c.library_location_id).name, action: "show", controller: 'library_locations', id: c.library_location_id
+  %p= link_to "Add Copies",  trestle.new_copies_admin_path
+%p= "Description: " + @book.description
 %hr/
 = link_to "Edit Book", trestle.edit_books_admin_path(@book.id)
 %br/

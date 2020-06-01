@@ -3,11 +3,15 @@
   = link_to "Edit Library", trestle.edit_library_locations_admin_path(@library.id)
   %h3
     = "Catalog"
-  %table
-    %tr
-      %th Copy
-      %th Title
-    - Copy.where(library_location_id: @library.id).each do |c|
-      %tr
-        %td= c.name
-        %td= link_to Book.find(c.book_id).title, action: 'show', controller: 'books', id: c.book_id
+  - if Copy.where(library_location: @library.id).blank?
+    %p There are no books in this library.
+  -else
+    %h5
+      %table
+        %tr
+          %th Copy   
+          %th Title
+        - Copy.where(library_location_id: @library.id).each do |c|
+          %tr
+            %td= c.name
+            %td= link_to Book.find(c.book_id).title, action: 'show', controller: 'books', id: c.book_id
