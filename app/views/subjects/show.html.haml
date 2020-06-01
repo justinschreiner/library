@@ -1,7 +1,9 @@
-%h1= @subject.name
-%h3
+%h1= "Subject: " + @subject.name
+%h5
   = link_to "Edit Subject", trestle.edit_subjects_admin_path(@subject.id)
   %h3
+    = "Books"
+  %h5
     %ul
       - Book.where(subject_id: @subject.id).each do |c|
         %li= link_to c.title, action: "show", controller: 'books', id: c.id

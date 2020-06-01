@@ -4,7 +4,7 @@
   $#{@book.price}
   %br/
   %strong Subject:
-  = link_to @book.subject.name, action: "show", controller: 'subjects', id: @book.subject_id
+  = link_to Subject.find(@book.subject_id).name, action: "show", controller: 'subjects', id: @book.subject_id
   %br/
   %strong Publisher:
   = link_to @book.publisher.name, action: "show", controller: 'publishers', id: @book.publisher.id
