@@ -9,6 +9,15 @@
   %strong Publisher:
   = link_to @book.publisher.name, action: "show", controller: 'publishers', id: @book.publisher.id
   %br/
+  %table
+    %tr
+      %th Copy
+      %th Library
+    - Copy.where(book_id: @book.id).each do |c|
+      %tr
+        %td=c.name
+        %td
+          = link_to LibraryLocation.find(c.library_location_id).name, action: "show", controller: 'library_locations', id: c.library_location_id
 %p= @book.description
 %hr/
 = link_to "Edit Book", trestle.edit_books_admin_path(@book.id)

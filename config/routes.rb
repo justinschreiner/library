@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :publishers, only: [:index,:show] do
     resources :books, only: [:index,:show]
   end
-  resources :libraries, only: [:index,:show] do
-    resources :copies, controller: 'libraries/copies', only: [:index,:show]
+  resources :library_locations, only: [:index,:show] do
+    resources :copies, controller: 'library_locations/copies', only: [:index,:show]
   end
 end
