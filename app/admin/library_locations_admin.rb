@@ -10,7 +10,6 @@ Trestle.resource(:library_locations) do
     column :name
     column :address
     column :established
-    column :created_at, align: :center
   end
 
   # Customize the form fields shown on the new/edit views.
