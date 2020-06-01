@@ -1,9 +1,9 @@
-%h1= "Publisher: " + @publishers.name
+%h1= "Publisher: " + @publisher.name
 %h5
-  = link_to "Edit Publisher", trestle.edit_publishers_admin_path(@publishers.id)
+  = link_to "Edit Publisher", trestle.edit_publishers_admin_path(@publisher.id)
   %h3
     = "Catalog"
   %h5
     %ul
-      - Book.where(publisher_id: @publishers.id).each do |c|
+      - @publisher.books.each do |c|
         %li= link_to c.title, action: "show", controller: 'books', id: c.id

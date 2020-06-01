@@ -5,6 +5,6 @@ class PublishersController < ApplicationController
     end
     
     def show
-        @publishers = Publisher.find(params[:id])
+        @publisher = Publisher.find(params[:id])
     end
 end
