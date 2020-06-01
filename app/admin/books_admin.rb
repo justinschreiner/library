@@ -10,7 +10,6 @@ Trestle.resource(:books) do
     column :title
     column :subject_id, -> (book) { Subject.find(book.subject_id).name }
     column :publisher_id, -> (book) { Publisher.find(book.publisher_id).name }
-    column :created_at, align: :center
   end
 
   # Customize the form fields shown on the new/edit views.

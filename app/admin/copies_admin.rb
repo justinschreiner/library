@@ -6,6 +6,7 @@ Trestle.resource(:copies) do
   # Customize the table columns shown on the index view.
   #
   table do
+    column :id
     column :book
     column :name
     column :library_location
