@@ -14,4 +14,4 @@
         - @library.copies.each do |c|
           %tr
             %td= c.name
-            %td= link_to c.book.title, action: 'show', controller: 'books', id: c.book_id
+            %td= link_to c.book.title, book_path(c.book)

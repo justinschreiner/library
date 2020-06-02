@@ -2,7 +2,7 @@
   - Subject.find_each do |c|
     %li
       .btn.btn-light.btn-sm
-        = link_to c.name, action: "show", controller: "subjects", id: c.id
+        = link_to c.name, subject_path(c.id)
   %br
   %li
     .btn.btn-outline-danger.btn-sm
