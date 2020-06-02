@@ -1,5 +1,5 @@
 class Subjects < ActiveRecord::Migration[6.0]
-  def self.up
+  def change
     create_table :subjects do |t|
       t.column :name, :string
     end
@@ -9,9 +9,5 @@ class Subjects < ActiveRecord::Migration[6.0]
     Subject.create name: "Chemistry"
     Subject.create name: "Psychology"
     Subject.create name: "Geography"
-  end
-
-  def self.down
-    drop_table :subjects
   end
 end
