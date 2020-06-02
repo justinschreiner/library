@@ -4,7 +4,7 @@
   $#{@book.price}
   %br/
   %strong Subject(s):
-  - @book.subjects.all.each do |s|
+  - @book.subjects.each do |s|
     = link_to s.name, subject_path(s.id)
   %br/
   %strong Created Date:
