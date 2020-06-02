@@ -70,3 +70,5 @@ gem "haml-rails", "~> 2.0"
 gem 'devise'
 
 gem 'trestle-auth'
+
+gem 'faker'
