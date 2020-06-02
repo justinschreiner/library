@@ -17,7 +17,7 @@ Trestle.resource(:books) do
   form do |book|
     text_field :title
     text_field :price
-    select :subject_id, Subject.all
+    select :subject_ids, Subject.all
     select :publisher_id, Publisher.all
     text_field :description
   end
