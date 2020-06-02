@@ -1,19 +1,23 @@
-Trestle.resource(:publishers) do
+Trestle.resource(:library_locations) do
   menu do
-    item :publishers, icon: "fa fa-star"
+    item :library_locations, icon: "fa fa-star"
   end
 
   # Customize the table columns shown on the index view.
-  
+  #
   table do
     column :id
     column :name
+    column :address
+    column :established
   end
 
   # Customize the form fields shown on the new/edit views.
   #
-  form do |publisher|
+  form do |library_location|
     text_field :name
+    text_field :address
+    text_field :established
   end
 
   # By default, all parameters passed to the update and create actions will be
@@ -24,6 +28,6 @@ Trestle.resource(:publishers) do
   #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
   #
   # params do |params|
-  #   params.require(:publisher).permit(:name, ...)
+  #   params.require(:library_location).permit(:name, ...)
   # end
 end

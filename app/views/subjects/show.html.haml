@@ -4,4 +4,4 @@
   %h3
     %ul
       - @subject.books.each do |c|
-        %li= link_to c.title, action: "show", controller: 'books', id: c.id
+        %li= link_to c.title, book_path(c.id)

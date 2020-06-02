@@ -3,8 +3,9 @@
   %strong Price:
   $#{@book.price}
   %br/
-  %strong Subject:
-  = link_to @book.subject.name, :action => "show", controller: 'subjects', :id => @book.subject.id
+  %strong Subject(s):
+  - @book.subjects.each do |s|
+    = link_to s.name, subject_path(s.id)
   %br/
   %strong Created Date:
   = @book.created_at
@@ -14,4 +15,4 @@
 = link_to "Edit Book", trestle.edit_books_admin_path(@book.id)
 %br/
 %br/
-= link_to 'Back', {:action => 'index'}
+= link_to 'Back', {action: 'index'}
