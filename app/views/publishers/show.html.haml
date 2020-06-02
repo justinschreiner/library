@@ -1,4 +1,4 @@
-%h1= "Publisher: " + @publisher.name
+%h1= "Publisher:  #{ @publisher.name }"
 %h5
   = link_to "Edit Publisher", trestle.edit_publishers_admin_path(@publisher.id)
   %h3 Catalog
