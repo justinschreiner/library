@@ -10,13 +10,7 @@ Trestle.resource(:copies) do
     column :book
     column :name
     column :library_location
-    column :checked_out?, align: :center do |copy|
-      if copy.checked_out?
-        status_tag(icon("fa fa-check"), :success)
-      else
-        status_tag(" ")
-      end 
-    end
+    column :checked_out?, align: :center 
   end
 
   # Customize the form fields shown on the new/edit views.
