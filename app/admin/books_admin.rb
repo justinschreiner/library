@@ -8,8 +8,8 @@ Trestle.resource(:books) do
   table do
     column :id
     column :title
-    column :subject_id, -> (book) { Subject.find(book.subject_id).name }
-    column :publisher_id, -> (book) {book.publisher.name}
+    column :subjects, -> (book) { book.subjects.map(&:itself) }
+    column :publisher_id, -> (book) { book.publisher }
   end
 
   # Customize the form fields shown on the new/edit views.
@@ -17,10 +17,8 @@ Trestle.resource(:books) do
   form do |book|
     text_field :title
     text_field :price
-    subject_select = Subject.all
-    select :subject_id, subject_select
-    publisher_select = Publisher.all
-    select :publisher_id, publisher_select
+    select :subject_ids, Subject.all, {},  multiple: true
+    select :publisher_id, Publisher.all
     text_field :description
   end
 

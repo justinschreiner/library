@@ -5,5 +5,5 @@
     = "Books"
   %h5
     %ul
-      - Book.where(subject_id: @subject.id).each do |c|
-        %li= link_to c.title, action: "show", controller: 'books', id: c.id
+      - @subject.books.each do |c|
+        %li= link_to c.title, book_path(c.id)

@@ -10,23 +10,15 @@ Trestle.resource(:copies) do
     column :book
     column :name
     column :library_location
-    column :checked_out, align: :center do |copy|
-      if copy.checked_out?
-        status_tag(icon("fa fa-check"), :success)
-      else
-        status_tag(" ")
-      end 
-    end
+    column :checked_out?, align: :center 
   end
 
   # Customize the form fields shown on the new/edit views.
   #
   form do |copy|
-    book_select = Book.all
-    select :book_id, book_select
+    select :book_id, Book.all
     text_field :name
-    library_select = LibraryLocation.all
-    select :library_location_id, library_select
+    select :library_location_id, LibraryLocation.all
     check_box :checked_out
     condition_select = ["Excelent", "Good", "Poor", "Ruined"]
     select :condition, condition_select

@@ -1,5 +1,5 @@
 class Books < ActiveRecord::Migration[6.0]
-  def self.up
+  def change
     create_table :books do |t|
       t.column :title, :string, limit: 32, null: false
       t.column :price, :float
@@ -8,9 +8,5 @@ class Books < ActiveRecord::Migration[6.0]
       t.column :description, :text
       t.column :created_at, :timestamp
     end
-  end
-
-  def self.down
-    drop_table :books
   end
 end
