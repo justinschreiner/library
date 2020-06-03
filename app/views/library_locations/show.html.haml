@@ -1,0 +1,17 @@
+%h1= "Library:  #{ @library.name }"
+%h5
+  = link_to "Edit Library", trestle.edit_library_locations_admin_path(@library.id)
+  %h3
+    = "Catalog"
+  - if @library.copies.blank?
+    %p There are no books in this library.
+  -else
+    %h5
+      %table
+        %tr
+          %th Copy   
+          %th Title
+        - @library.copies.each do |c|
+          %tr
+            %td= c.name
+            %td= link_to c.book.title, book_path(c.book)

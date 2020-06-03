@@ -7,10 +7,22 @@
   - @book.subjects.each do |s|
     = link_to s.name, subject_path(s.id)
   %br/
-  %strong Created Date:
-  = @book.created_at
-  %br/
-%p= @book.description
+  %strong Publisher:
+  = link_to @book.publisher.name, publisher_path(@book.publisher)
+  - if @book.copies.blank?
+    %p This book has no copies.
+  - else
+    %table
+      %tr
+        %th Copy
+        %th Library
+      - @book.copies.each do |c|
+        %tr
+          %td=c.name
+          %td
+            = link_to c.library_location.name, library_location_path(c.library_location)
+  %p= link_to "Add Copies",  trestle.new_copies_admin_path
+%p= "Description:   #{@book.description}"
 %hr/
 = link_to "Edit Book", trestle.edit_books_admin_path(@book.id)
 %br/
