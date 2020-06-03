@@ -12,14 +12,14 @@
   %p There are not any books currently in the system.
 
 - else
-  %p Search Books
+  %h3 Search Books
 
   = search_form_for @q do |f|
     // Search if the title field contains query
     %p Title:
     = f.search_field :title_cont, :class => "form-control"
   
-    = f.submit :class => "btn btn-primary btn-sm"
+    = f.submit :class => "btn btn-success btn-sm"
     
   .container
     - @books.each do |c|
