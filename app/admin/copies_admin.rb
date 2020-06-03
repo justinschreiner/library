@@ -10,6 +10,7 @@ Trestle.resource(:copies) do
     column :book
     column :name
     column :library_location
+    column :condition
     column :checked_out?, align: :center 
   end
 
@@ -20,7 +21,6 @@ Trestle.resource(:copies) do
     text_field :name
     select :library_location_id, LibraryLocation.all
     check_box :checked_out
-    condition_select = ["Excelent", "Good", "Poor", "Ruined"]
-    select :condition, condition_select
+    select :condition, ["Excelent", "Good", "Poor", "Ruined"]
   end
 end

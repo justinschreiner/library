@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_143103) do
+ActiveRecord::Schema.define(version: 2020_06_02_193048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.string "title", limit: 32, null: false
+    t.string "title", limit: 255, null: false
     t.float "price"
     t.integer "subject_id"
     t.text "description"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2020_06_01_143103) do
   end
 
   create_table "copies", force: :cascade do |t|
-    t.bigint "book_id"
-    t.bigint "library_location_id"
+    t.bigint "book_id", null: false
+    t.bigint "library_location_id", null: false
     t.string "name"
     t.boolean "checked_out"
     t.string "condition"
@@ -68,4 +68,6 @@ ActiveRecord::Schema.define(version: 2020_06_01_143103) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "copies", "books"
+  add_foreign_key "copies", "library_locations"
 end
