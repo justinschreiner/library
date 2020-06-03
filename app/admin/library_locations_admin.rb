@@ -20,14 +20,11 @@ Trestle.resource(:library_locations) do
     text_field :established
   end
 
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:library_location).permit(:name, ...)
-  # end
+  search do |query|
+    if query
+      LibraryLocation.where("name ILIKE ?", "%#{query}%")
+    else
+      LibraryLocation.all
+    end
+  end
 end
