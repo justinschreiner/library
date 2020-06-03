@@ -2,7 +2,8 @@ class BooksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @books = Book.all
+    @q = Book.ransack(params[:q])
+    @books = @q.result(distinct: true)
   end
 
   def show

@@ -74,3 +74,5 @@ gem 'trestle-auth'
 gem 'faker'
 
 gem 'trestle-search'
+
+gem 'ransack'

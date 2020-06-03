@@ -7,10 +7,20 @@
   %li
     .btn.btn-outline-danger.btn-sm
       = link_to "Add New Subject", trestle.new_subjects_admin_path
+
 - if @books.blank?
   %p There are not any books currently in the system.
+
 - else
-  %p These are the current books in our system
+  %h3 Search Books
+
+  = search_form_for @q do |f|
+    // Search if the title field contains query
+    = f.label :title
+    = f.search_field :title_cont, :class => "form-control"
+  
+    = f.submit :class => "btn btn-success btn-sm"
+    
   .container
     - @books.each do |c|
       .row
@@ -20,6 +30,8 @@
         .col
           .btn.btn-outline-danger.btn-sm
             = link_to "Edit", trestle.edit_books_admin_path(c)
-        -# getting rid of delete option here.  if an admin wants to delete a book, they can do so by clicking edit and loging into trestle
+            -# getting rid of delete option here.  if an admin wants to delete a book, they 
+            -# can do so by clicking edit and loging into trestle
+    
     .btn.btn-outline-danger.btn-sm
       = link_to "Add New Book", trestle.new_books_admin_path
