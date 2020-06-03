@@ -16,6 +16,7 @@ Trestle.resource(:books) do
   #
   form do |book|
     text_field :title
+    file_field :cover
     text_field :price
     select :subject_ids, Subject.all, {},  multiple: true
     select :publisher_id, Publisher.all

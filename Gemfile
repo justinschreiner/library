@@ -78,3 +78,5 @@ gem 'trestle-search'
 gem 'ransack'
 
 gem 'carrierwave', '~> 2.0'
+
+gem "trestle-active_storage", github: "richardvenneman/trestle-active_storage"

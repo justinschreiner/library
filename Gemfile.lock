@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/richardvenneman/trestle-active_storage.git
+  revision: 11fee72f91f8fa92f36d224f75501ad8dd39baf3
+  specs:
+    trestle-active_storage (2.2.1)
+      rails (>= 5.2, < 7)
+      trestle (~> 0.9.0, >= 0.9.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -325,6 +333,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   standard
   trestle
+  trestle-active_storage!
   trestle-auth
   trestle-search
   turbolinks (~> 5)
