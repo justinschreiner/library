@@ -3,4 +3,6 @@ class Book < ApplicationRecord
   belongs_to :publisher
   has_many :copies
   has_many :library_locations, through: :copies
+
+  mount_uploader :cover, CoverUploader
 end
