@@ -76,3 +76,5 @@ gem 'faker'
 gem 'trestle-search'
 
 gem 'ransack'
+
+gem 'carrierwave', '~> 2.0'
