@@ -22,4 +22,14 @@ Trestle.resource(:books) do
     text_field :description
   end
 
+  # Search books
+  #
+  search do |query|
+    if query
+      Book.where("title ILIKE ?", "%#{query}%")
+    else
+      Book.all
+    end
+  end
+
 end
