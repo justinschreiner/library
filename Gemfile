@@ -72,3 +72,5 @@ gem 'devise'
 gem 'trestle-auth'
 
 gem 'faker'
+
+gem 'trestle-search'
