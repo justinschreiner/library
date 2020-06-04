@@ -16,6 +16,10 @@ Trestle.resource(:books) do
   #
   form do |book|
     text_field :title
+    unless book.cover.file.nil?
+      concat "Current Cover: "
+      concat(image_tag(book.cover.url, size: "100x150"))
+    end
     file_field :cover
     text_field :price
     select :subject_ids, Subject.all, {},  multiple: true
