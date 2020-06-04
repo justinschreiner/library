@@ -11,7 +11,7 @@ Trestle.resource(:copies) do
     column :name
     column :library_location
     column :condition
-    column :checked_out?, align: :center 
+    column :checked_out?, align: :center
   end
 
   # Customize the form fields shown on the new/edit views.
