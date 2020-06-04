@@ -6,12 +6,11 @@
   - if @library.copies.blank?
     %p There are no books in this library.
   -else
-    %h5
-      %table
+    %table
+      %tr
+        %th Copy   
+        %th Title
+      - @library.copies.each do |c|
         %tr
-          %th Copy   
-          %th Title
-        - @library.copies.each do |c|
-          %tr
-            %td= c.name
-            %td= link_to c.book.title, book_path(c.book)
+          %td= c.name
+          %td= link_to c.book.title, book_path(c.book)
