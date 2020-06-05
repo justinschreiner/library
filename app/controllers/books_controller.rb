@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   def index
     @q = Book.ransack(params[:q])
-    @books = @q.result(distinct: true).page(params[:page])
+    @books = @q.result(distinct: true).paginate(page: params[:page], per_page: 12)
   end
 
   def show
@@ -46,6 +46,6 @@ class BooksController < ApplicationController
   end
 
   def book_param
-    params.require(:book).permit(:title, :price, :subject_id, :description)
+    params.require(:book).permit(:title, :price, :subject_id, :description, :page)
   end
 end

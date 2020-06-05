@@ -8,7 +8,7 @@
     .btn.btn-outline-danger.btn-sm
       = link_to "Add New Subject", trestle.new_subjects_admin_path
 
-= search_form_for(@q, html: { method: :post, class: 'ransack-form' }) do |f|
+= search_form_for @q do |f|
   // Search if the title field contains query
   = f.label :title
   = f.search_field :title_cont, :class => "form-control"
