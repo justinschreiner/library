@@ -12,7 +12,7 @@
   // Search if the title field contains query
   = f.label :title
   = f.search_field :title_cont, :class => "form-control"
-
+  = f.hidden_field :page, value: '1', class: 'ransack-page'
   = f.submit :class => "btn btn-success btn-sm"
 
 - if @books.blank?
@@ -34,3 +34,5 @@
     
     .btn.btn-outline-danger.btn-sm
       = link_to "Add New Book", trestle.new_books_admin_path
+.pagination
+  = will_paginate @books
