@@ -98,3 +98,8 @@ ul#subjects .btn-outline-danger:hover a:visited,
 .container .btn-outline-danger:hover a:visited {
   color: white !important;
 }
+
+.pagination a,
+.pagination em {
+  padding: 0 0.2em;
+}

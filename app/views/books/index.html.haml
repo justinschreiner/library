@@ -34,5 +34,5 @@
     
     .btn.btn-outline-danger.btn-sm
       = link_to "Add New Book", trestle.new_books_admin_path
-  .ransack-pagination
-    = will_paginate @books
+.pagination
+  = will_paginate @books
