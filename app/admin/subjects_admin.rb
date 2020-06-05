@@ -23,5 +23,4 @@ Trestle.resource(:subjects) do
       Subject.all
     end
   end
-
 end

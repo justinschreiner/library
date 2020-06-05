@@ -4,7 +4,7 @@ Trestle.resource(:publishers) do
   end
 
   # Customize the table columns shown on the index view.
-  
+
   table do
     column :id
     column :name

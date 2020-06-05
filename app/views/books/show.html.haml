@@ -1,4 +1,6 @@
 %h1= @book.title
+- unless @book.cover.file.nil?
+  =image_tag @book.cover.url, width: "200", height:"300"
 %p
   %strong Price:
   $#{@book.price}
